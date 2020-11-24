@@ -125,11 +125,10 @@ class BotEngine(
                     activation,
                     loggingContext
                 )
-
                 processStates(context)
-                saveContext(cm, botContext, request, reactions)
             }
             conversationLoggers.forEach { it.obfuscateAndLog(loggingContext) }
+            saveContext(cm, botContext, request, reactions)
             botContext.cleanTempData()
         }
     }
